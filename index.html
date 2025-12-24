@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antalya OtoCar Doctor - Profesyonel Araç Tamiri</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Antalya'da profesyonel araç tamiri, antalya çekici hizmeti, antalya oto bakım. Hızlı ve güvenilir servis.">
+    <meta name="keywords" content="antalya araba tamiri, oto tamir antalya, araç servisi, antalya çekici hizmeti, antalya oto tamir, Авторемонт в Анталии, ремонт автомобилей в Анталии, техническое обслуживание транспортных средств, услуги эвакуации автомобилей в Анталии, авторемонт в Анталии, Antalya car repair, auto repair Antalya, vehicle service, Antalya towing service, Antalya auto repair, إصلاح السيارات في أنطاليا، صيانة المركبات، خدمات سحب السيارات في أنطاليا">
+    <meta name="author" content="Antalya OtoCar Doctor">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags (Sosyal Medya) -->
+    <meta property="og:title" content="Antalya OtoCar Doctor - Araç Tamiri">
+    <meta property="og:description" content="Profesyonel oto tamir ve çekici hizmeti. Hemen teklif alın!">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Ads Conversion Tracking (BURAYA KENDİ KODUNUZU EKLEYİN) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-XXXXXXXXXX'); // Buraya kendi Ads ID'nizi yazın
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFE082 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #F28D3F 0%, #D97330 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 15px;
+            object-fit: contain;
+            background: #F28D3F;
+            padding: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Trust Badges - Google Ads için önemli */
+        .trust-bar {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .trust-item span {
+            font-size: 16px;
+        }
+
+        /* İletişim Bilgileri Bölümü - Güvenilirlik için */
+        .contact-info {
+            display: none; /* Artık kullanılmıyor */
+        }
+
+        .content {
+            padding: 30px 20px;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .info-box {
+            background: #E3F2FD;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: #F28D3F;
+            color: white;
+        }
+
+        .btn-success {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #F44336;
+            color: white;
+        }
+
+        .btn-teal {
+            background: #009688;
+            color: white;
+        }
+
+        .btn-orange {
+            background: #FF5722;
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-telegram {
+            background: #2AABEE;
+            color: white;
+        }
+
+        .btn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #F28D3F;
+        }
+
+        .input-group small {
+            display: block;
+            margin-top: 5px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .symptom-card {
+            border: 3px solid #ddd;
+            border-radius: 12px;
+            padding: 20px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .symptom-card:hover {
+            transform: scale(1.05);
+        }
+
+        .symptom-card.selected {
+            background: #79B8D8;
+            border-color: #5A9DC2;
+            color: white;
+        }
+
+        .symptom-emoji {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .symptom-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F28D3F 0%, #D97330 100%);
+            transition: width 0.3s ease;
+        }
+
+        /* Footer - Güvenilirlik için */
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://i.ibb.co/SXcffG2R/logo.png" 
+                 alt="Antalya OtoCar Doctor Logo" 
+                 class="logo-img"
+                 onerror="this.onerror=null; this.src='https://i.ibb.co/kgJmmvpQ/logo.png';">
+            <h1>Antalya OtoCar Doctor</h1>
+            <p id="headerSubtitle">Profesyonel Araç Tamiri. Профессиональный ремонт автомобилей и эвакуация транспортных средств. Professional Vehicle Repair & Towing Service. خدمة إصلاح وسحب المركبات الاحترافية</p>
+        </div>
+
+        <!-- Trust Bar - Google Ads için önemli -->
+        <div class="trust-bar">
+            <div class="trust-item">
+                <span>✓</span> Profesyonel Tamir
+            </div>
+            <div class="trust-item">
+                <span>✓</span> Repair & Towing
+            </div>
+            <div class="trust-item">
+                <span>✓</span> Ремонт и буксировка
+            </div>
+            <div class="trust-item">
+                <span>✓</span> خدمات الإصلاح والقطر
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 14%"></div>
+            </div>
+
+            <!-- Dil Seçimi -->
+            <div class="step active" id="step1">
+                <div class="step-title">
+                    Dilinizi Seçin<br>
+                    Choose Your Language<br>
+                    Выберите язык<br>
+                    اختر لغتك
+                </div>
+                <button class="btn btn-primary" onclick="selectLanguage('tr')">TR Türkçe</button>
+                <button class="btn btn-primary" onclick="selectLanguage('en')">EN English</button>
+                <button class="btn btn-primary" onclick="selectLanguage('ru')">RU Русский</button>
+                <button class="btn btn-primary" onclick="selectLanguage('ar')">SA العربية</button>
+            </div>
+
+            <!-- Araç Hareket Ediyor mu? -->
+            <div class="step" id="step2">
+                <div class="info-box" id="welcomeBox"></div>
+                <div class="step-title" id="movementTitle"></div>
+                <button class="btn btn-success" onclick="setMovement(true)" id="movementYes"></button>
+                <button class="btn btn-danger" onclick="setMovement(false)" id="movementNo"></button>
+            </div>
+
+            <!-- Çekici Gerekli mi? -->
+            <div class="step" id="step3">
+                <div class="step-title" id="towTitle"></div>
+                <div class="btn-row">
+                    <button class="btn btn-teal" onclick="setTowTruck(true)" id="towYes"></button>
+                    <button class="btn btn-orange" onclick="setTowTruck(false)" id="towNo"></button>
+                </div>
+                <div class="info-box" id="emergencyInfo"></div>
+            </div>
+
+            <!-- Arıza Seçimi -->
+            <div class="step" id="step4">
+                <div class="step-title" id="symptomTitle"></div>
+                <div class="symptom-grid" id="symptomGrid"></div>
+                <button class="btn btn-primary" onclick="goToStep(5)" id="nextBtn" disabled></button>
+            </div>
+
+            <!-- Araç Bilgileri -->
+            <div class="step" id="step5">
+                <div class="step-title" id="vehicleTitle"></div>
+                
+                <div class="input-group">
+                    <label id="nameLabel"></label>
+                    <input type="text" id="customerName" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="brandLabel"></label>
+                    <input type="text" id="brandName" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="modelLabel"></label>
+                    <input type="text" id="modelName" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="colorLabel"></label>
+                    <input type="text" id="color" required>
+                </div>
+
+                <div class="input-group">
+                    <label id="plateLabel"></label>
+                    <input type="text" id="plateNumber" style="text-transform: uppercase;">
+                    <small id="plateNote"></small>
+                </div>
+
+                <div class="info-box" id="infoText"></div>
+
+                <button class="btn btn-primary" onclick="goToStep(6)" id="continueBtn"></button>
+            </div>
+
+            <!-- İletişim -->
+            <div class="step" id="step6">
+                <div class="step-title" id="contactTitle"></div>
+                
+                <button class="btn btn-telegram" onclick="sendTelegram()">
+                    ✈️ <span id="telegramBtn"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Antalya OtoCar Doctor</strong></p>
+            <p>адрес/Adres/عنوان: [Antalya Akdeniz Sanayi Sitesi (Yeni Sanayi)]</p>
+            <p style="margin-top: 10px;">© 2025 Antalya OtoCar Doctor - Tüm hakları saklıdır</p>
+        </div>
+    </div>
+
+    <script>
+        const state = {
+            lang: 'tr',
+            isMoving: null,
+            needsTowTruck: null,
+            symptoms: [],
+            customerName: '',
+            brandName: '',
+            modelName: '',
+            color: '',
+            plateNumber: ''
+        };
+
+        const WHATSAPP_NUMBER = '905551234567'; // + olmadan
+        const TELEGRAM_USERNAME = 'antalyaotocardoctor'; // @ olmadan
+
+        const translations = {
+            tr: {
+                welcomeTitle: "Hoş Geldiniz!",
+                welcomeMessage: "Butonları işaretledikten sonra uzmanımızla iletişime geçeceksiniz.",
+                movementQuestion: "Aracınız Hareket Edebiliyor mu?",
+                movementYes: "✓ Evet, Hareket Ediyor",
+                movementNo: "✗ Hayır, Hareket Etmiyor",
+                towQuestion: "Çekici Gerekli mi?",
+                towYes: "Evet, Çekici Lazım",
+                towNo: "Kendim Getireceğim",
+                emergencyWarning: "⚠️ ACİL DURUM: 112'yi arayın!\n🚗 Kaza sonrası araç güvende ise bize ulaşın.",
+                symptomQuestion: "Hangi Arızalar Var?\n(Birden fazla seçebilirsiniz)",
+                symptoms: {
+                    bumper: "Tampon Hasarı",
+                    sound: "Garip Ses",
+                    tire: "Lastik Sorunu",
+                    engine: "Motor Arızası",
+                    electrical: "Elektrik Arızası",
+                    oil: "Yağ İkazı",
+                    start: "Çalışmıyor",
+                    other: "Diğer"
+                },
+                nextBtn: "Devam Et ➜",
+                vehicleTitle: "Araç ve Kişi Bilgileri",
+                nameLabel: "Adınız Soyadınız *",
+                brandLabel: "Araç Markası *",
+                modelLabel: "Araç Modeli *",
+                colorLabel: "Araç Rengi *",
+                plateLabel: "Plaka",
+                plateNote: "(İsteğe bağlı)",
+                infoText: "* İşaretli alanlar zorunludur. Bu bilgiler size daha hızlı hizmet verebilmemiz için gereklidir.",
+                continueBtn: "Devam Et",
+                contactTitle: "Doldurduğunuz bilgileri Antalya OtoCar Doctor Uzmanımıza Gönderin!",
+                telegramBtn: "Telegram'dan Gönder"
+            },
+            en: {
+                welcomeTitle: "Welcome!",
+                welcomeMessage: "After checking the buttons, you will be contacted by our expert.",
+                movementQuestion: "Can Your Vehicle Move?",
+                movementYes: "✓ Yes, It Moves",
+                movementNo: "✗ No, It Cannot Move",
+                towQuestion: "Do You Need a Tow Truck?",
+                towYes: "Yes, Need Tow Truck",
+                towNo: "I'll Bring It Myself",
+                emergencyWarning: "⚠️ EMERGENCY: Call 112!\n🚗 If vehicle is safe after accident, contact us.",
+                symptomQuestion: "What Problems Do You Have?\n(You can select multiple)",
+                symptoms: {
+                    bumper: "Bumper Damage",
+                    sound: "Strange Sound",
+                    tire: "Tire Issue",
+                    engine: "Engine Problem",
+                    electrical: "Electrical Issue",
+                    oil: "Oil Warning",
+                    start: "Won't Start",
+                    other: "Other"
+                },
+                nextBtn: "Continue ➜",
+                vehicleTitle: "Vehicle and Personal Information",
+                nameLabel: "Your Full Name *",
+                brandLabel: "Vehicle Brand *",
+                modelLabel: "Vehicle Model *",
+                colorLabel: "Vehicle Color *",
+                plateLabel: "License Plate",
+                plateNote: "(Optional)",
+                infoText: "* Marked fields are required. This information helps us serve you faster.",
+                continueBtn: "Continue",
+                contactTitle: "Send the information you filled out to our Antalya OtoCar Doctor Expert!",
+                telegramBtn: "Send via Telegram"
+            },
+            ru: {
+                welcomeTitle: "Добро пожаловать!",
+                welcomeMessage: "После нажатия кнопок с вами свяжется наш специалист.",
+                movementQuestion: "Ваш автомобиль может двигаться?",
+                movementYes: "✓ Да, движется",
+                movementNo: "✗ Нет, не движется",
+                towQuestion: "Нужен эвакуатор?",
+                towYes: "Да, нужен эвакуатор",
+                towNo: "Привезу сам",
+                emergencyWarning: "⚠️ ЭКСТРЕННАЯ СИТУАЦИЯ: Звоните 112!\n🚗 Если после аварии автомобиль в безопасности, свяжитесь с нами.",
+                symptomQuestion: "Какие проблемы?\n(Можно выбрать несколько)",
+                symptoms: {
+                    bumper: "Повреждение бампера",
+                    sound: "Странный звук",
+                    tire: "Проблема с шиной",
+                    engine: "Проблема с двигателем",
+                    electrical: "Электрическая неисправность",
+                    oil: "Предупреждение о масле",
+                    start: "Не заводится",
+                    other: "Другое"
+                },
+                nextBtn: "Продолжить ➜",
+                vehicleTitle: "Информация об автомобиле и владельце",
+                nameLabel: "Ваше полное имя *",
+                brandLabel: "Марка автомобиля *",
+                modelLabel: "Модель автомобиля *",
+                colorLabel: "Цвет автомобиля *",
+                plateLabel: "Номерной знак",
+                plateNote: "(Необязательно)",
+                infoText: "* обязательные поля. Эта информация помогает нам быстрее обслужить вас.",
+                continueBtn: "Продолжить",
+                contactTitle: "Отправьте заполненную вами информацию нашему специалисту OtoCar Doctor в Анталии!",
+                telegramBtn: "Отправить через Telegram"
+            },
+            ar: {
+                welcomeTitle: "مرحباً بك!",
+                welcomeMessage: "بعد التحقق من الأزرار، سيتصل بك خبيرنا.",
+                movementQuestion: "هل يمكن لسيارتك التحرك؟",
+                movementYes: "✓ نعم، تتحرك",
+                movementNo: "✗ لا، لا تتحرك",
+                towQuestion: "هل تحتاج إلى سيارة سحب؟",
+                towYes: "نعم، أحتاج سيارة سحب",
+                towNo: "سأحضرها بنفسي",
+                emergencyWarning: "⚠️ حالة طارئة: اتصل بـ 112!\n🚗 إذا كانت السيارة آمنة بعد الحادث، اتصل بنا.",
+                symptomQuestion: "ما هي المشاكل؟\n(يمكنك اختيار عدة)",
+                symptoms: {
+                    bumper: "تلف المصد",
+                    sound: "صوت غريب",
+                    tire: "مشكلة في الإطار",
+                    engine: "مشكلة في المحرك",
+                    electrical: "عطل كهربائي",
+                    oil: "تحذير الزيت",
+                    start: "لا يعمل",
+                    other: "أخرى"
+                },
+                nextBtn: "متابعة ➜",
+                vehicleTitle: "معلومات السيارة والمالك",
+                nameLabel: "اسمك الكامل *",
+                brandLabel: "ماركة السيارة *",
+                modelLabel: "موديل السيارة *",
+                colorLabel: "لون السيارة *",
+                plateLabel: "لوحة الترخيص",
+                plateNote: "(اختياري)",
+                infoText: "* الحقول المطلوبة. تساعدنا هذه المعلومات في خدمتك بشكل أسرع.",
+                continueBtn: "متابعة",
+                contactTitle: "أرسل المعلومات التي قمت بتعبئتها إلى خبيرنا في Antalya OtoCar Doctor!",
+                telegramBtn: "إرسال عبر Telegram"
+            }
+        };
+
+        function selectLanguage(lang) {
+            state.lang = lang;
+            updateTexts();
+            goToStep(2);
+            
+            // Google Ads Conversion Event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'language_selected', {
+                    'event_category': 'engagement',
+                    'event_label': lang
+                });
+            }
+        }
+
+        function updateTexts() {
+            const t = translations[state.lang];
+            
+            document.getElementById('welcomeBox').innerHTML = `<strong>${t.welcomeTitle}</strong><br>${t.welcomeMessage}`;
+            document.getElementById('movementTitle').textContent = t.movementQuestion;
+            document.getElementById('movementYes').textContent = t.movementYes;
+            document.getElementById('movementNo').textContent = t.movementNo;
+            document.getElementById('towTitle').textContent = t.towQuestion;
+            document.getElementById('towYes').textContent = t.towYes;
+            document.getElementById('towNo').textContent = t.towNo;
+            document.getElementById('emergencyInfo').textContent = t.emergencyWarning;
+            document.getElementById('symptomTitle').textContent = t.symptomQuestion;
+            document.getElementById('nextBtn').textContent = t.nextBtn;
+            document.getElementById('vehicleTitle').textContent = t.vehicleTitle;
+            document.getElementById('nameLabel').textContent = t.nameLabel;
+            document.getElementById('brandLabel').textContent = t.brandLabel;
+            document.getElementById('modelLabel').textContent = t.modelLabel;
+            document.getElementById('colorLabel').textContent = t.colorLabel;
+            document.getElementById('plateLabel').textContent = t.plateLabel;
+            document.getElementById('plateNote').textContent = t.plateNote;
+            document.getElementById('infoText').textContent = t.infoText;
+            document.getElementById('continueBtn').textContent = t.continueBtn;
+            document.getElementById('contactTitle').textContent = t.contactTitle;
+            document.getElementById('telegramBtn').textContent = t.telegramBtn;
+
+            createSymptomGrid();
+        }
+
+        function createSymptomGrid() {
+            const t = translations[state.lang];
+            const symptoms = [
+                {id: 'bumper', emoji: '🚗💥', text: t.symptoms.bumper},
+                {id: 'sound', emoji: '🔊', text: t.symptoms.sound},
+                {id: 'tire', emoji: '🛞', text: t.symptoms.tire},
+                {id: 'engine', emoji: '⚙️🔥', text: t.symptoms.engine},
+                {id: 'electrical', emoji: '⚡🪫', text: t.symptoms.electrical},
+                {id: 'oil', emoji: '🫖💧', text: t.symptoms.oil},
+                {id: 'start', emoji: '🚗⭕', text: t.symptoms.start},
+                {id: 'other', emoji: '❓', text: t.symptoms.other}
+            ];
+
+            const grid = document.getElementById('symptomGrid');
+            grid.innerHTML = symptoms.map(s => `
+                <div class="symptom-card" onclick="toggleSymptom('${s.id}', this)">
+                    <div class="symptom-emoji">${s.emoji}</div>
+                    <div class="symptom-text">${s.text}</div>
+                </div>
+            `).join('');
+        }
+
+        function toggleSymptom(id, element) {
+            const index = state.symptoms.indexOf(id);
+            if (index > -1) {
+                state.symptoms.splice(index, 1);
+                element.classList.remove('selected');
+            } else {
+                state.symptoms.push(id);
+                element.classList.add('selected');
+            }
+            document.getElementById('nextBtn').disabled = state.symptoms.length === 0;
+        }
+
+        function setMovement(isMoving) {
+            state.isMoving = isMoving;
+            if (isMoving) {
+                goToStep(4);
+            } else {
+                goToStep(3);
+            }
+        }
+
+        function setTowTruck(needed) {
+            state.needsTowTruck = needed;
+            goToStep(4);
+        }
+
+        function goToStep(stepNumber) {
+            if (stepNumber === 6) {
+                state.customerName = document.getElementById('customerName').value.trim();
+                state.brandName = document.getElementById('brandName').value.trim();
+                state.modelName = document.getElementById('modelName').value.trim();
+                state.color = document.getElementById('color').value.trim();
+                state.plateNumber = document.getElementById('plateNumber').value.trim().toUpperCase();
+
+                if (!state.customerName || !state.brandName || !state.modelName || !state.color) {
+                    alert(state.lang === 'tr' ? 'Lütfen zorunlu alanları doldurun!' : 
+                          state.lang === 'en' ? 'Please fill in the required fields!' :
+                          state.lang === 'ru' ? 'Пожалуйста, заполните обязательные поля!' :
+                          'يرجى ملء الحقول المطلوبة!');
+                    return;
+                }
+
+                // Google Ads Lead Conversion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-XXXXXXXXXX/CONVERSION-ID', // Buraya kendi conversion ID'nizi yazın
+                        'value': 1.0,
+                        'currency': 'TRY'
+                    });
+                }
+            }
+
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + stepNumber).classList.add('active');
+            
+            const progress = (stepNumber / 6) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function createMessage() {
+            const t = translations[state.lang];
+            
+            // Arıza isimleri Türkçe karşılıkları
+            const symptomNamesTR = {
+                'bumper': 'Tampon Hasarı',
+                'sound': 'Garip Ses',
+                'tire': 'Lastik Sorunu',
+                'engine': 'Motor Arızası',
+                'electrical': 'Elektrik Arızası',
+                'oil': 'Yağ İkazı',
+                'start': 'Çalışmıyor',
+                'other': 'Diğer'
+            };
+
+            // Dil etiketleri
+            const langNames = {
+                'tr': '🇹🇷 Türkçe',
+                'en': '🇬🇧 English',
+                'ru': '🇷🇺 Русский',
+                'ar': '🇸🇦 العربية'
+            };
+
+            // Mesaj başlıkları çift dilli
+            const messageLabels = {
+                tr: {
+                    customerInfo: 'MÜŞTERİ BİLGİLERİ',
+                    name: 'İsim',
+                    plate: 'Plaka',
+                    brand: 'Marka',
+                    model: 'Model',
+                    color: 'Renk',
+                    vehicleStatus: 'ARAÇ DURUMU',
+                    moving: 'Hareket Ediyor',
+                    towTruck: 'Çekici Gerekli',
+                    problems: 'ARIZALAR',
+                    yes: 'Evet',
+                    no: 'Hayır',
+                    notSpecified: 'Belirtilmemiş',
+                    finalMessage: 'YARDIMCI OLABİLİR MİSİNİZ?'
+                },
+                en: {
+                    customerInfo: 'MÜŞTERİ BİLGİLERİ / CUSTOMER INFO',
+                    name: 'İsim / Name',
+                    plate: 'Plaka / Plate',
+                    brand: 'Marka / Brand',
+                    model: 'Model / Model',
+                    color: 'Renk / Color',
+                    vehicleStatus: 'ARAÇ DURUMU / VEHICLE STATUS',
+                    moving: 'Hareket Ediyor / Moving',
+                    towTruck: 'Çekici Gerekli / Tow Truck Needed',
+                    problems: 'ARIZALAR / PROBLEMS',
+                    yes: 'Evet / Yes',
+                    no: 'Hayır / No',
+                    notSpecified: 'Belirtilmemiş / Not Specified',
+                    finalMessage: 'CAN YOU HELP ME?'
+                },
+                ru: {
+                    customerInfo: 'MÜŞTERİ BİLGİLERİ / ИНФОРМАЦИЯ О КЛИЕНТЕ',
+                    name: 'İsim / Имя',
+                    plate: 'Plaka / Номер',
+                    brand: 'Marka / Марка',
+                    model: 'Model / Модель',
+                    color: 'Renk / Цвет',
+                    vehicleStatus: 'ARAÇ DURUMU / СОСТОЯНИЕ АВТОМОБИЛЯ',
+                    moving: 'Hareket Ediyor / Движется',
+                    towTruck: 'Çekici Gerekli / Нужен эвакуатор',
+                    problems: 'ARIZALAR / ПРОБЛЕМЫ',
+                    yes: 'Evet / Да',
+                    no: 'Hayır / Нет',
+                    notSpecified: 'Belirtilmemiş / Не указано',
+                    finalMessage: 'МОЖЕТЕ ЛИ ВЫ МНЕ ПОМОЧЬ?'
+                },
+                ar: {
+                    customerInfo: 'MÜŞTERİ BİLGİLERİ / معلومات العميل',
+                    name: 'İsim / الاسم',
+                    plate: 'Plaka / اللوحة',
+                    brand: 'Marka / الماركة',
+                    model: 'Model / الموديل',
+                    color: 'Renk / اللون',
+                    vehicleStatus: 'ARAÇ DURUMU / حالة المركبة',
+                    moving: 'Hareket Ediyor / تتحرك',
+                    towTruck: 'Çekici Gerekli / مطلوب سيارة سحب',
+                    problems: 'ARIZALAR / المشاكل',
+                    yes: 'Evet / نعم',
+                    no: 'Hayır / لا',
+                    notSpecified: 'Belirtilmemiş / غير محدد',
+                    finalMessage: 'nأتواصل من موقعكم الإلكتروني. هل يمكنكم مساعدتي؟'
+                }
+            };
+
+            const labels = messageLabels[state.lang];
+
+            let message = `*WEB SİTESİ*`;     
+            message += `\n`;
+            message += `${langNames[state.lang]}\n\n`;
+            
+            message += `*${labels.customerInfo}*\n`;
+            message += `${labels.name}: ${state.customerName}\n`;
+            message += `${labels.plate}: ${state.plateNumber || labels.notSpecified}\n`;
+            message += `${labels.brand}: ${state.brandName}\n`;
+            message += `${labels.model}: ${state.modelName}\n`;
+            message += `${labels.color}: ${state.color}\n\n`;
+            
+            message += `*${labels.vehicleStatus}*\n`;
+            message += `${labels.moving}: ${state.isMoving ? labels.yes : labels.no}\n`;
+            if (!state.isMoving) {
+                message += `${labels.towTruck}: ${state.needsTowTruck ? labels.yes : labels.no}\n`;
+            }
+            message += `\n`;
+            
+            if (state.symptoms.length > 0) {
+                message += `*${labels.problems}*\n`;
+                state.symptoms.forEach(id => {
+                    const trName = symptomNamesTR[id];
+                    const customerLangName = t.symptoms[id];
+                    // Eğer dil Türkçe değilse, hem Türkçe hem müşteri dilinde göster
+                    if (state.lang === 'tr') {
+                        message += `• ${trName}\n`;
+                    } else {
+                        message += `• ${trName} (${customerLangName})\n`;
+                    }
+                });
+                message += `\n`;
+            }
+            
+            message += `${labels.finalMessage}`;
+            
+            return message;
+        }
+
+        function sendTelegram() {
+            // Google Ads Telegram Conversion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-XXXXXXXXXX/TELEGRAM-CONVERSION-ID',
+                    'value': 1.0,
+                    'currency': 'TRY'
+                });
+            }
+
+            const message = createMessage();
+            const url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
