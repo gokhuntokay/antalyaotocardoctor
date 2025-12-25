@@ -16,14 +16,15 @@
     <meta property="og:description" content="Professional auto repair and towing service. Профессиональный авторемонт и эвакуация автомобилей.">
     <meta property="og:type" content="website">
     
-    <!-- Google Ads Conversion Tracking (BURAYA KENDİ KODUNUZU EKLEYİN) -->
+
+<!-- Google Ads Conversion Tracking -->
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17830183567"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'AW-XXXXXXXXXX'); // Buraya kendi Ads ID'nizi yazın
+        gtag('config', 'AW-17830183567');
     </script>
     
     <style>
@@ -844,19 +845,17 @@
         }
 
         function sendTelegram() {
-            // Google Ads Telegram Conversion
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-XXXXXXXXXX/TELEGRAM-CONVERSION-ID',
-                    'value': 1.0,
-                    'currency': 'TRY'
-                });
-            }
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17830183567/ATxcCN-N9dYbEI-FjLZC', // ✅ Gerçek kod
+                'value': 1.0,
+                'currency': 'TRY'
+            });
+        
 
             const message = createMessage();
             const url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
-        }
+        }    
     </script>
 </body>
 </html>
