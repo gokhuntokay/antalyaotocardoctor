@@ -318,7 +318,7 @@
                  class="logo-img"
                  onerror="this.onerror=null; this.src='https://i.ibb.co/kgJmmvpQ/logo.png';">
             <h1>Antalya OtoCar Doctor</h1>
-            <p id="headerSubtitle">-Profesyonel Araç Tamiri-. Профессиональный ремонт автомобилей и эвакуация транспортных средств. Professional Vehicle Repair & Towing Service. خدمة إصلاح وسحب المركبات الاحترافية</p>
+            <p id="headerSubtitle">*Profesyonel Araç Tamiri*. Профессиональный ремонт автомобилей и эвакуация транспортных средств. Professional Vehicle Repair & Towing Service. خدمة إصلاح وسحب المركبات الاحترافية</p>
         </div>
 
         <!-- Trust Bar - Google Ads için önemli -->
@@ -421,6 +421,10 @@
             <div class="step" id="step6">
                 <div class="step-title" id="contactTitle"></div>
                 
+                <button class="btn btn-whatsapp" onclick="sendWhatsApp()">
+                    📱 <span id="whatsappBtn"></span>
+                </button>
+                
                 <button class="btn btn-telegram" onclick="sendTelegram()">
                     ✈️ <span id="telegramBtn"></span>
                 </button>
@@ -448,7 +452,7 @@
             plateNumber: ''
         };
 
-        const WHATSAPP_NUMBER = '905551234567'; // + olmadan
+        const WHATSAPP_NUMBER = '905551234567'; // + olmadan - BURAYA KENDİ NUMARANIZI YAZIN
         const TELEGRAM_USERNAME = 'antalyaotocardoctor'; // @ olmadan
 
         const translations = {
@@ -484,6 +488,7 @@
                 infoText: "* İşaretli alanlar zorunludur. Bu bilgiler size daha hızlı hizmet verebilmemiz için gereklidir.",
                 continueBtn: "Devam Et",
                 contactTitle: "Doldurduğunuz bilgileri Antalya OtoCar Doctor Uzmanımıza Gönderin!",
+                whatsappBtn: "WhatsApp'tan Gönder",
                 telegramBtn: "Telegram'dan Gönder"
             },
             en: {
@@ -518,6 +523,7 @@
                 infoText: "* Marked fields are required. This information helps us serve you faster.",
                 continueBtn: "Continue",
                 contactTitle: "Send the information you filled out to our Antalya OtoCar Doctor Expert!",
+                whatsappBtn: "Send via WhatsApp",
                 telegramBtn: "Send via Telegram"
             },
             ru: {
@@ -552,6 +558,7 @@
                 infoText: "* обязательные поля. Эта информация помогает нам быстрее обслужить вас.",
                 continueBtn: "Продолжить",
                 contactTitle: "Отправьте заполненную вами информацию нашему специалисту OtoCar Doctor в Анталии!",
+                whatsappBtn: "Отправить через WhatsApp",
                 telegramBtn: "Отправить через Telegram"
             },
             ar: {
@@ -586,6 +593,7 @@
                 infoText: "* الحقول المطلوبة. تساعدنا هذه المعلومات في خدمتك بشكل أسرع.",
                 continueBtn: "متابعة",
                 contactTitle: "أرسل المعلومات التي قمت بتعبئتها إلى خبيرنا في Antalya OtoCar Doctor!",
+                whatsappBtn: "إرسال عبر WhatsApp",
                 telegramBtn: "إرسال عبر Telegram"
             }
         };
@@ -627,6 +635,7 @@
             document.getElementById('infoText').textContent = t.infoText;
             document.getElementById('continueBtn').textContent = t.continueBtn;
             document.getElementById('contactTitle').textContent = t.contactTitle;
+            document.getElementById('whatsappBtn').textContent = t.whatsappBtn;
             document.getElementById('telegramBtn').textContent = t.telegramBtn;
 
             createSymptomGrid();
@@ -691,171 +700,4 @@
                 if (!state.customerName || !state.brandName || !state.modelName || !state.color) {
                     alert(state.lang === 'tr' ? 'Lütfen zorunlu alanları doldurun!' : 
                           state.lang === 'en' ? 'Please fill in the required fields!' :
-                          state.lang === 'ru' ? 'Пожалуйста, заполните обязательные поля!' :
-                          'يرجى ملء الحقول المطلوبة!');
-                    return;
-                }
-
-                // Google Ads Lead Conversion
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-XXXXXXXXXX/CONVERSION-ID', // Buraya kendi conversion ID'nizi yazın
-                        'value': 1.0,
-                        'currency': 'TRY'
-                    });
-                }
-            }
-
-            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
-            document.getElementById('step' + stepNumber).classList.add('active');
-            
-            const progress = (stepNumber / 6) * 100;
-            document.getElementById('progressBar').style.width = progress + '%';
-        }
-
-        function createMessage() {
-            const t = translations[state.lang];
-            
-            // Arıza isimleri Türkçe karşılıkları
-            const symptomNamesTR = {
-                'bumper': 'Tampon Hasarı',
-                'sound': 'Garip Ses',
-                'tire': 'Lastik Sorunu',
-                'engine': 'Motor Arızası',
-                'electrical': 'Elektrik Arızası',
-                'oil': 'Yağ İkazı',
-                'start': 'Çalışmıyor',
-                'other': 'Diğer'
-            };
-
-            // Dil etiketleri
-            const langNames = {
-                'tr': '🇹🇷 Türkçe',
-                'en': '🇬🇧 English',
-                'ru': '🇷🇺 Русский',
-                'ar': '🇸🇦 العربية'
-            };
-
-            // Mesaj başlıkları çift dilli
-            const messageLabels = {
-                tr: {
-                    customerInfo: 'MÜŞTERİ BİLGİLERİ',
-                    name: 'İsim',
-                    plate: 'Plaka',
-                    brand: 'Marka',
-                    model: 'Model',
-                    color: 'Renk',
-                    vehicleStatus: 'ARAÇ DURUMU',
-                    moving: 'Hareket Ediyor',
-                    towTruck: 'Çekici Gerekli',
-                    problems: 'ARIZALAR',
-                    yes: 'Evet',
-                    no: 'Hayır',
-                    notSpecified: 'Belirtilmemiş',
-                    finalMessage: 'YARDIMCI OLABİLİR MİSİNİZ?'
-                },
-                en: {
-                    customerInfo: 'MÜŞTERİ BİLGİLERİ / CUSTOMER INFO',
-                    name: 'İsim / Name',
-                    plate: 'Plaka / Plate',
-                    brand: 'Marka / Brand',
-                    model: 'Model / Model',
-                    color: 'Renk / Color',
-                    vehicleStatus: 'ARAÇ DURUMU / VEHICLE STATUS',
-                    moving: 'Hareket Ediyor / Moving',
-                    towTruck: 'Çekici Gerekli / Tow Truck Needed',
-                    problems: 'ARIZALAR / PROBLEMS',
-                    yes: 'Evet / Yes',
-                    no: 'Hayır / No',
-                    notSpecified: 'Belirtilmemiş / Not Specified',
-                    finalMessage: 'CAN YOU HELP ME?'
-                },
-                ru: {
-                    customerInfo: 'MÜŞTERİ BİLGİLERİ / ИНФОРМАЦИЯ О КЛИЕНТЕ',
-                    name: 'İsim / Имя',
-                    plate: 'Plaka / Номер',
-                    brand: 'Marka / Марка',
-                    model: 'Model / Модель',
-                    color: 'Renk / Цвет',
-                    vehicleStatus: 'ARAÇ DURUMU / СОСТОЯНИЕ АВТОМОБИЛЯ',
-                    moving: 'Hareket Ediyor / Движется',
-                    towTruck: 'Çekici Gerekli / Нужен эвакуатор',
-                    problems: 'ARIZALAR / ПРОБЛЕМЫ',
-                    yes: 'Evet / Да',
-                    no: 'Hayır / Нет',
-                    notSpecified: 'Belirtilmemiş / Не указано',
-                    finalMessage: 'МОЖЕТЕ ЛИ ВЫ МНЕ ПОМОЧЬ?'
-                },
-                ar: {
-                    customerInfo: 'MÜŞTERİ BİLGİLERİ / معلومات العميل',
-                    name: 'İsim / الاسم',
-                    plate: 'Plaka / اللوحة',
-                    brand: 'Marka / الماركة',
-                    model: 'Model / الموديل',
-                    color: 'Renk / اللون',
-                    vehicleStatus: 'ARAÇ DURUMU / حالة المركبة',
-                    moving: 'Hareket Ediyor / تتحرك',
-                    towTruck: 'Çekici Gerekli / مطلوب سيارة سحب',
-                    problems: 'ARIZALAR / المشاكل',
-                    yes: 'Evet / نعم',
-                    no: 'Hayır / لا',
-                    notSpecified: 'Belirtilmemiş / غير محدد',
-                    finalMessage: 'nأتواصل من موقعكم الإلكتروني. هل يمكنكم مساعدتي؟'
-                }
-            };
-
-            const labels = messageLabels[state.lang];
-
-            let message = `*WEB SİTESİ*`;     
-            message += `\n`;
-            message += `${langNames[state.lang]}\n\n`;
-            
-            message += `*${labels.customerInfo}*\n`;
-            message += `${labels.name}: ${state.customerName}\n`;
-            message += `${labels.plate}: ${state.plateNumber || labels.notSpecified}\n`;
-            message += `${labels.brand}: ${state.brandName}\n`;
-            message += `${labels.model}: ${state.modelName}\n`;
-            message += `${labels.color}: ${state.color}\n\n`;
-            
-            message += `*${labels.vehicleStatus}*\n`;
-            message += `${labels.moving}: ${state.isMoving ? labels.yes : labels.no}\n`;
-            if (!state.isMoving) {
-                message += `${labels.towTruck}: ${state.needsTowTruck ? labels.yes : labels.no}\n`;
-            }
-            message += `\n`;
-            
-            if (state.symptoms.length > 0) {
-                message += `*${labels.problems}*\n`;
-                state.symptoms.forEach(id => {
-                    const trName = symptomNamesTR[id];
-                    const customerLangName = t.symptoms[id];
-                    // Eğer dil Türkçe değilse, hem Türkçe hem müşteri dilinde göster
-                    if (state.lang === 'tr') {
-                        message += `• ${trName}\n`;
-                    } else {
-                        message += `• ${trName} (${customerLangName})\n`;
-                    }
-                });
-                message += `\n`;
-            }
-            
-            message += `${labels.finalMessage}`;
-            
-            return message;
-        }
-
-        function sendTelegram() {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17830183567/ATxcCN-N9dYbEI-FjLZC', // ✅ Gerçek kod
-                'value': 1.0,
-                'currency': 'TRY'
-            });
-        
-
-            const message = createMessage();
-            const url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
-        }    
-    </script>
-</body>
-</html>
+                          
