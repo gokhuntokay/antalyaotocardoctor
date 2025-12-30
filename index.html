@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Antalya'da profesyonel araç tamiri, antalya çekici hizmeti, antalya oto bakım. Hızlı ve güvenilir servis.">
-    <meta name="keywords" content="antalya araba tamiri, oto tamir antalya, araç servisi, antalya çekici hizmeti, antalya oto tamir, Авторемонт в Анталии, ремонт автомобилей в Анталии, техническое обслуживание транспортных средств, услуги эвакуации автомобилей в Анталии, авторемонт в Анталии, Antalya car repair, auto repair Antalya, vehicle service, Antalya towing service, Antalya auto repair, إصلاح السيارات في أنطاليا، صيانة المركبات، خدمات سحب السيارات في أنطاليا">
+    <meta name="keywords" content="antalya araba tamiri, oto tamir antalya, araç servisi, antalya çekici hizmeti, antalya oto tamir, Авторемонт в Анталии, ремонт автомобилей в Анталии, техническое обслуживание транспортных средств, услуги эвакуации автомобилей в Анталии, авторемонт в Анталии, Antalya car repair, auto repair Antalya, vehicle service, Antalya towing service, Antalya auto repair, إصلاح السيارات في أنطاليا، صيانة المركبات، خدمات سحب السيارات في أنطاليا, Autoreparatur in Antalya, Kfz-Werkstatt Antalya">
     <meta name="author" content="Antalya OtoCar Doctor">
     <meta name="robots" content="index, follow">
     
@@ -311,7 +311,7 @@
                  class="logo-img"
                  onerror="this.onerror=null; this.src='https://i.ibb.co/kgJmmvpQ/logo.png';">
             <h1>Antalya OtoCar Doctor</h1>
-            <p id="headerSubtitle">*Profesyonel Araç Tamiri*. Профессиональный ремонт автомобилей и эвакуация транспортных средств. Professional Vehicle Repair & Towing Service. خدمة إصلاح وسحب المركبات الاحترافية</p>
+            <p id="headerSubtitle">*Profesyonel Araç Tamiri*. Профессиональный ремонт автомобилей и эвакуация транспортных средств. Professional Vehicle Repair & Towing Service. خدمة إصلاح وسحب المركبات الاحترافية. Professionelle Autoreparatur & Abschleppdienst</p>
         </div>
 
         <div class="trust-bar">
@@ -327,6 +327,9 @@
             <div class="trust-item">
                 <span>✓</span> خدمات الإصلاح والقطر
             </div>
+            <div class="trust-item">
+                <span>✓</span> Autoreparatur & Abschlepp
+            </div>
         </div>
 
         <div class="content">
@@ -339,12 +342,14 @@
                     Dilinizi Seçin<br>
                     Choose Your Language<br>
                     Выберите язык<br>
-                    اختر لغتك
+                    اختر لغتك<br>
+                    Wählen Sie Ihre Sprache
                 </div>
                 <button class="btn btn-primary" onclick="selectLanguage('tr')">TR Türkçe</button>
                 <button class="btn btn-primary" onclick="selectLanguage('en')">EN English</button>
                 <button class="btn btn-primary" onclick="selectLanguage('ru')">RU Русский</button>
                 <button class="btn btn-primary" onclick="selectLanguage('ar')">SA العربية</button>
+                <button class="btn btn-primary" onclick="selectLanguage('de')">DE Deutsch</button>
             </div>
 
             <div class="step" id="step2">
@@ -579,6 +584,41 @@
                 contactTitle: "أرسل المعلومات التي قمت بتعبئتها إلى خبيرنا في Antalya OtoCar Doctor!",
                 whatsappBtn: "إرسال عبر WhatsApp",
                 telegramBtn: "إرسال عبر Telegram"
+            },
+            de: {
+                welcomeTitle: "Willkommen!",
+                welcomeMessage: "Nachdem Sie die Buttons ausgewählt haben, wird sich unser Experte mit Ihnen in Verbindung setzen.",
+                movementQuestion: "Kann Ihr Fahrzeug sich bewegen?",
+                movementYes: "✓ Ja, es bewegt sich",
+                movementNo: "✗ Nein, es bewegt sich nicht",
+                towQuestion: "Benötigen Sie einen Abschleppwagen?",
+                towYes: "Ja, Abschleppwagen nötig",
+                towNo: "Ich bringe es selbst",
+                emergencyWarning: "⚠️ NOTFALL: Rufen Sie 112 an!\n🚗 Wenn das Fahrzeug nach einem Unfall sicher ist, kontaktieren Sie uns.",
+                symptomQuestion: "Welche Probleme gibt es?\n(Mehrfachauswahl möglich)",
+                symptoms: {
+                    bumper: "Stoßstangenschaden",
+                    sound: "Seltsames Geräusch",
+                    tire: "Reifenproblem",
+                    engine: "Motorproblem",
+                    electrical: "Elektrischer Defekt",
+                    oil: "Ölwarnung",
+                    start: "Startet nicht",
+                    other: "Sonstiges"
+                },
+                nextBtn: "Weiter ➜",
+                vehicleTitle: "Fahrzeug- und Personeninformationen",
+                nameLabel: "Ihr voller Name *",
+                brandLabel: "Fahrzeugmarke *",
+                modelLabel: "Fahrzeugmodell *",
+                colorLabel: "Fahrzeugfarbe *",
+                plateLabel: "Kennzeichen",
+                plateNote: "(Optional)",
+                infoText: "* Pflichtfelder. Diese Informationen helfen uns, Ihnen schneller zu dienen.",
+                continueBtn: "Weiter",
+                contactTitle: "Senden Sie die ausgefüllten Informationen an unseren Experten von Antalya OtoCar Doctor!",
+                whatsappBtn: "Über WhatsApp senden",
+                telegramBtn: "Über Telegram senden"
             }
         };
 
@@ -684,7 +724,8 @@
                     alert(state.lang === 'tr' ? 'Lütfen zorunlu alanları doldurun!' : 
                           state.lang === 'en' ? 'Please fill in the required fields!' :
                           state.lang === 'ru' ? 'Пожалуйста, заполните обязательные поля!' :
-                          'يرجى ملء الحقول المطلوبة!');
+                          state.lang === 'ar' ? 'يرجى ملء الحقول المطلوبة!' :
+                          'Bitte füllen Sie die Pflichtfelder aus!');
                     return;
                 }
 
@@ -722,7 +763,8 @@
                 'tr': '🇹🇷 Türkçe',
                 'en': '🇬🇧 English',
                 'ru': '🇷🇺 Русский',
-                'ar': '🇸🇦 العربية'
+                'ar': '🇸🇦 العربية',
+                'de': '🇩🇪 Deutsch'
             };
 
             const messageLabels = {
@@ -789,6 +831,22 @@
                     no: 'Hayır / لا',
                     notSpecified: 'Belirtilmemiş / غير محدد',
                     finalMessage: 'nأتواصل من موقعكم الإلكتروني. هل يمكنكم مساعدتي؟'
+                },
+                de: {
+                    customerInfo: 'MÜŞTERİ BİLGİLERİ / KUNDENINFORMATIONEN',
+                    name: 'İsim / Name',
+                    plate: 'Plaka / Kennzeichen',
+                    brand: 'Marka / Marke',
+                    model: 'Model / Modell',
+                    color: 'Renk / Farbe',
+                    vehicleStatus: 'ARAÇ DURUMU / FAHRZEUGZUSTAND',
+                    moving: 'Hareket Ediyor / Bewegt sich',
+                    towTruck: 'Çekici Gerekli / Abschleppwagen nötig',
+                    problems: 'ARIZALAR / PROBLEME',
+                    yes: 'Evet / Ja',
+                    no: 'Hayır / Nein',
+                    notSpecified: 'Belirtilmemiş / Nicht angegeben',
+                    finalMessage: 'KÖNNEN SIE MIR HELFEN?'
                 }
             };
 
@@ -861,4 +919,3 @@
     </script>
 </body>
 </html>
-            
